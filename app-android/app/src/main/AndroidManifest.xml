@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pleos Connect 차량용 앱 -->
+    <uses-feature
+        android:name="android.hardware.type.automotive"
+        android:required="true" />
+
+    <!-- NaviHelper "Declaring permissions" 문서:
+         NAVI_ROUTE        → getDestinationInfo()
+         NAVI_ROUTE_SEARCH → requestRoute()
+         NAVI_CUSTOM_MAP(requestNavigationScreen)은 쓰지 않으므로 선언하지 않는다. -->
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE" />
+    <uses-permission android:name="pleos.car.permission.NAVI_ROUTE_SEARCH" />
+
+    <!-- 미등록 목적지의 주변 주차장 실시간 검색(카카오 로컬 API)용. 키가 없으면 네트워크를 쓰지 않는다. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 이 앱은 길 안내 앱이 아니므로 android.intent.category.APP_MAPS 를 선언하지 않는다
+         (Maps/Navigation 앱 개발 가이드: 카테고리 오선언은 반려 사유). -->
+
+    <application
+        android:allowBackup="false"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+
+        <uses-library
+            android:name="android.car"
+            android:required="false" />
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- DO 미선언 앱은 주행 중 사용 불가(지역별 주행 규제 정책).
+                 주행 중에는 CarUxRestrictions 에 따라 한 줄 상태만 보여준다. -->
+            <meta-data
+                android:name="distractionOptimized"
+                android:value="true" />
+        </activity>
+    </application>
+</manifest>

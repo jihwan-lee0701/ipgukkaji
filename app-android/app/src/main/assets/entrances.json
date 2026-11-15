@@ -1,0 +1,283 @@
+{
+  "_readme": "dataKind=TEST 는 개발·시연용 가상 데이터(좌표 가상, 화면에 '테스트 데이터' 배너). dataKind=REAL 은 출처가 있는 실제 시설 데이터이며, 좌표 출처·공식 안내 URL·로드뷰 확인 링크와 촬영 시점을 기록한다. 로드뷰 이미지는 저장하지 않는다(링크만). 현장·경로 검증 전 REAL 항목은 verification.status=REMOTE_VIEW_CHECKED.",
+  "dataVersion": "2026-11-15.1",
+  "facilities": [
+    {
+      "id": "test-hospital",
+      "dataKind": "TEST",
+      "officialName": "입구까지테스트병원",
+      "aliases": [
+        "테스트병원"
+      ],
+      "excludeKeywords": [
+        "분원"
+      ],
+      "address": "가상 주소 (테스트 데이터)",
+      "center": {
+        "lat": 37.5,
+        "lon": 127.0
+      },
+      "matchRadiusM": 400,
+      "naviPoiIds": [],
+      "purposes": [
+        {
+          "id": "main",
+          "label": "본관 외래"
+        },
+        {
+          "id": "cancer",
+          "label": "암병원"
+        },
+        {
+          "id": "er",
+          "label": "응급실"
+        }
+      ]
+    },
+    {
+      "id": "snubh",
+      "dataKind": "REAL",
+      "officialName": "분당서울대학교병원",
+      "aliases": [
+        "분당서울대병원"
+      ],
+      "excludeKeywords": [],
+      "address": "경기 성남시 분당구 구미로173번길 82",
+      "center": {
+        "lat": 37.3493053,
+        "lon": 127.1241745
+      },
+      "matchRadiusM": 500,
+      "naviPoiIds": [],
+      "purposes": [
+        {
+          "id": "outpatient",
+          "label": "외래 진료·검사"
+        },
+        {
+          "id": "inpatient",
+          "label": "입원·보호자"
+        },
+        {
+          "id": "funeral",
+          "label": "장례식장"
+        }
+      ],
+      "_centerSource": "OpenStreetMap way 232198027 (amenity=hospital) 중심점, ODbL"
+    }
+  ],
+  "entrances": [
+    {
+      "id": "test-hospital-a",
+      "facilityId": "test-hospital",
+      "name": "테스트 A입구 (본관 지하주차장)",
+      "routeTarget": {
+        "lat": 37.5012,
+        "lon": 127.0
+      },
+      "gate": {
+        "lat": 37.5011,
+        "lon": 127.0001
+      },
+      "approach": "테스트 문구: 북쪽 도로에서 우회전으로만 진입",
+      "visitorAccess": "ALLOWED",
+      "conditions": [
+        "테스트 문구: 외래·입원 방문객 진입 가능"
+      ],
+      "purposeIds": [
+        "main"
+      ],
+      "heightLimitText": null,
+      "photo": {
+        "asset": null,
+        "license": "NONE",
+        "credit": null
+      },
+      "source": {
+        "type": "TEST",
+        "url": null,
+        "retrievedAt": null
+      },
+      "verification": {
+        "status": "TEST_DATA",
+        "fieldCheckedAt": null,
+        "routeCheckedAt": null,
+        "routeCheckedFrom": []
+      }
+    },
+    {
+      "id": "test-hospital-b",
+      "facilityId": "test-hospital",
+      "name": "테스트 B입구 (암병원 주차장)",
+      "routeTarget": {
+        "lat": 37.5,
+        "lon": 127.0015
+      },
+      "gate": {
+        "lat": 37.5,
+        "lon": 127.0014
+      },
+      "approach": "테스트 문구: 동쪽 도로에서 진입",
+      "visitorAccess": "CONDITIONAL",
+      "conditions": [
+        "테스트 문구: 암병원 외래 환자 차량만 진입 가능"
+      ],
+      "purposeIds": [
+        "cancer"
+      ],
+      "heightLimitText": null,
+      "photo": {
+        "asset": null,
+        "license": "NONE",
+        "credit": null
+      },
+      "source": {
+        "type": "TEST",
+        "url": null,
+        "retrievedAt": null
+      },
+      "verification": {
+        "status": "TEST_DATA",
+        "fieldCheckedAt": null,
+        "routeCheckedAt": null,
+        "routeCheckedFrom": []
+      }
+    },
+    {
+      "id": "test-hospital-c",
+      "facilityId": "test-hospital",
+      "name": "테스트 C입구 (직원 전용)",
+      "routeTarget": {
+        "lat": 37.4988,
+        "lon": 127.0
+      },
+      "gate": null,
+      "approach": null,
+      "visitorAccess": "NOT_ALLOWED",
+      "conditions": [
+        "테스트 문구: 직원 차량 전용 — 방문객 진입 불가"
+      ],
+      "purposeIds": [],
+      "heightLimitText": null,
+      "photo": {
+        "asset": null,
+        "license": "NONE",
+        "credit": null
+      },
+      "source": {
+        "type": "TEST",
+        "url": null,
+        "retrievedAt": null
+      },
+      "verification": {
+        "status": "TEST_DATA",
+        "fieldCheckedAt": null,
+        "routeCheckedAt": null,
+        "routeCheckedFrom": []
+      }
+    },
+    {
+      "id": "snubh-main-underground",
+      "facilityId": "snubh",
+      "name": "정문 방면 지하주차장 입구",
+      "routeTarget": {
+        "lat": 37.350821,
+        "lon": 127.1230001
+      },
+      "gate": {
+        "lat": 37.350821,
+        "lon": 127.1230001
+      },
+      "approach": "공식 안내: 병원 정문 방면에 지하 주차장 2곳",
+      "visitorAccess": "ALLOWED",
+      "conditions": [
+        "공식 안내: 지하주차장은 환자 및 외래·입퇴원 당일 이용자 중심으로 감면 적용",
+        "공식 안내: 평일 20분 무료, 초과 10분당 500원",
+        "공식 안내: 입원환자 24시간 정액권은 지하주차장에 적용되지 않음",
+        "방문객 진입 제한은 공식 안내에 없음"
+      ],
+      "purposeIds": [
+        "outpatient"
+      ],
+      "heightLimitText": null,
+      "photo": {
+        "asset": null,
+        "license": "NONE",
+        "credit": null
+      },
+      "source": {
+        "type": "OFFICIAL_WEB",
+        "url": "https://www.snubh.org/intro/map/parking.do",
+        "retrievedAt": "2026-11-15"
+      },
+      "verification": {
+        "status": "REMOTE_VIEW_CHECKED",
+        "fieldCheckedAt": null,
+        "routeCheckedAt": null,
+        "routeCheckedFrom": []
+      },
+      "coordinateSource": "OpenStreetMap node 4340470059 (amenity=parking_entrance), ODbL",
+      "remoteChecks": [
+        {
+          "provider": "카카오맵 로드뷰",
+          "url": "https://map.kakao.com/?panoid=1213614513&pan=89.4&zoom=0&map_type=TYPE_MAP&map_attribute=ROADVIEW&urlX=527247.0&urlY=1069920.0",
+          "imageDate": "2026-08",
+          "checkedAt": "2026-11-15",
+          "note": "본관 앞 진입 도로와 주차 요금소·차단기 확인, 지도에 '지하주차장' 표기. 지하 진입 램프 자체와 표지판 문구는 화면에서 판독하지 못함"
+        }
+      ]
+    },
+    {
+      "id": "snubh-funeral-side",
+      "facilityId": "snubh",
+      "name": "장례식장 방면 주차장 입구 (지상·타워·스누하우스 주차장)",
+      "routeTarget": {
+        "lat": 37.3466274,
+        "lon": 127.1253229
+      },
+      "gate": {
+        "lat": 37.3466274,
+        "lon": 127.1253229
+      },
+      "approach": "공식 안내: 서울시니어스분당타워 삼거리에서 장례식장 방면으로 직진하면 주차장 입구",
+      "visitorAccess": "ALLOWED",
+      "conditions": [
+        "공식 안내: 주차 혼잡 시간대에는 장례식장 방면 주차장에 주차 후 셔틀버스 이용",
+        "공식 안내: 평일 60분 무료, 초과 10분당 500원",
+        "공식 안내: 입원환자 전용 24시간 10,000원(지상주차장)",
+        "방문객 진입 제한은 공식 안내에 없음"
+      ],
+      "purposeIds": [
+        "inpatient",
+        "funeral"
+      ],
+      "heightLimitText": null,
+      "photo": {
+        "asset": null,
+        "license": "NONE",
+        "credit": null
+      },
+      "source": {
+        "type": "OFFICIAL_WEB",
+        "url": "https://www.snubh.org/intro/map/parking.do",
+        "retrievedAt": "2026-11-15"
+      },
+      "verification": {
+        "status": "REMOTE_VIEW_CHECKED",
+        "fieldCheckedAt": null,
+        "routeCheckedAt": null,
+        "routeCheckedFrom": []
+      },
+      "coordinateSource": "OpenStreetMap node 13067838986 (amenity=parking_entrance), ODbL",
+      "remoteChecks": [
+        {
+          "provider": "카카오맵 로드뷰",
+          "url": "https://map.kakao.com/?panoid=1213614768&pan=98.6&zoom=0&map_type=TYPE_MAP&map_attribute=ROADVIEW&urlX=527760.0&urlY=1068798.0",
+          "imageDate": "2026-08",
+          "checkedAt": "2026-11-15",
+          "note": "지도에 '제2주차장' 표기, 인근에 시니어스타워·스누하우스 표기. 공식 안내의 주차장 명칭(지상·타워·스누하우스)과 '제2주차장'의 대응 관계는 확인하지 못함"
+        }
+      ]
+    }
+  ]
+}
